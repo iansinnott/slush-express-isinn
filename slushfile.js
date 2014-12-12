@@ -62,16 +62,32 @@ var questions = [
   }
 ];
 
+/**
+ * This is a bit messy. I could probably clean this up a bit by simply using
+ * through and running _.template directly if the file being passed through the
+ * stream was package .json.
+ */
 gulp.task('default', function (done) {
   inquirer.prompt(questions,
-  function (answers) {
-    gulp.src(__dirname + '/templates/**', { dot: true })
-      .pipe(template(answers))
-      .pipe(conflict('./'))
-      .pipe(gulp.dest('./')) // Relative to cwd
-      .pipe(install())
-      .on('finish', function () {
-        done(); // Finished!
-      });
-  });
+    function (answers) {
+
+      // Copy all files over OTHER than package.json
+      gulp.src([
+          __dirname+'/templates/**', // Everything under templates/ ...
+          '!'+__dirname+'/templates/package.json' // ... except package.json
+        ],{ dot: true })
+        .pipe(conflict('./'))
+        .pipe(gulp.dest('./')); // Relative to cwd
+
+      // Run package.json through the template function, then copy it over and
+      // run the install script
+      gulp.src(__dirname + '/templates/package.json')
+        .pipe(template(answers))
+        .pipe(conflict('./'))
+        .pipe(gulp.dest('./'))
+        .pipe(install())
+        .on('finish', function () {
+          done(); // Finished!
+        });
+    });
 });
