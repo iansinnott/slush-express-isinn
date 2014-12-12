@@ -12,14 +12,14 @@ var gulp     = require('gulp'),
  * default.
  */
 function getAuthor() {
-  var hasGit = !exec('which git').code;
+  var hasGit = !exec('which git', { silent: true }).code;
 
   if (!hasGit)
     return exec('whoami').output.trim();
 
-  var name   = exec('git config --get user.name').output.trim(),
-      email  = exec('git config --get user.email').output.trim(),
-      url    = exec('git config --get user.url').output.trim(),
+  var name   = exec('git config --get user.name', { silent: true }).output.trim(),
+      email  = exec('git config --get user.email', { silent: true }).output.trim(),
+      url    = exec('git config --get user.url', { silent: true }).output.trim(),
       author = [];
 
   if (name) author.push(name);
