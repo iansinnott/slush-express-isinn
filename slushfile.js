@@ -59,10 +59,6 @@ var questions = [
     name: 'license',
     message: 'License:',
     'default': 'MIT'
-  },{
-    type: 'confirm',
-    name: 'continue',
-    message: 'Continue?'
   }
 ];
 
