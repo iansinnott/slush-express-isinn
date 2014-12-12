@@ -69,7 +69,7 @@ var questons = [
 gulp.task('default', function (done) {
   inquirer.prompt(questions,
   function (answers) {
-    gulp.src(__dirname + '/templates/**') // Relative to __dirname
+    gulp.src(__dirname + '/templates/**', { dot: true })
       .pipe(template(answers))
       .pipe(conflict('./'))
       .pipe(gulp.dest('./')) // Relative to cwd
