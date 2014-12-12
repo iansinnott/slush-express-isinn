@@ -29,7 +29,7 @@ function getAuthor() {
   return author.join(' ');
 }
 
-var questons = [
+var questions = [
   {
     type:'input',
     name: 'name',
@@ -48,7 +48,7 @@ var questons = [
     type:'input',
     name: 'main',
     message: 'Entrypoint:',
-    'default': 'input.js'
+    'default': 'index.js'
   },{
     type:'input',
     name: 'author',
