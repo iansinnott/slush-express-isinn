@@ -10,6 +10,14 @@ What's included:
 * Jshint
 * Font Awesome
 
+## Installation
+
+Make sure you already have Slush installed, then:j
+
+```
+npm install -g slush-express-isinn
+```
+
 ## Generate a project base
 
 ```
@@ -21,7 +29,7 @@ slush express-iansinnott
 After you go through the prompts and everything has been installed simply run gulp to fire things up:
 
 ```
-$ gulp
+gulp
 ```
 
 This starts a server running on `localhost:3000`. Stylus, Jade and JavaScript files will all be watched and their respective gulp tasks will be run when they're changed.
