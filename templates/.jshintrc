@@ -1,0 +1,14 @@
+{
+  "node": true,
+  "browser": true,
+  "devel": true,
+  "jquery": true,
+
+  "curly": true,
+  "latedef": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "trailing": true,
+  "indent": 2
+}

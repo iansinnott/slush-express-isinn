@@ -1,0 +1,78 @@
+global-reset()
+
+// Variables {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+content-width = 1100px
+body-font = 'Helvetica Neue', Helvetica, Arial, sans-serif
+black = #464848
+blue = #4576AF
+yellow = #FBF6AE
+gray = #8A8A8A
+gray-bd = #949599
+gray-txt = #9B9B9B
+maroon = #C15467
+purple = #3E4084
+off-white = #fafafa
+
+// }}} END Variables
+
+// Mixins {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Calculate a px amount as a percentage
+// Note that the '' are necessary to cast as a percentage
+pct(number)
+  unit(number / content-width * 100, '%')
+
+// Create a downwards triangle
+triangle-down(color = red, w = 50px, h = 25px)
+  position relative
+  &:after
+    content ''
+    width 0
+    height 0
+    border-left (w/2) solid transparent
+    border-right (w/2) solid transparent
+    border-top h solid color
+    {block}
+
+
+// }}} END Mixins
+
+// General {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*
+  box-sizing border-box
+
+body
+  font-family body-font
+  background #FEFEFE
+  color black
+  font-size 18px
+
+img
+  max-width 100%
+  width auto
+
+// }}} END General
+
+// Generated Styles
+// You will likely want to change these
+
+h1
+  margin-top 100px
+  font-weight 500
+  font-size 48px
+  margin-bottom 20px
+
+footer
+  margin-top 200px
+
+.container
+  center(content-width, pct(20))
+  padding-top 100
+
+.copy
+  color lighten(gray, 60%)

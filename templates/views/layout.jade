@@ -1,0 +1,7 @@
+doctype html
+html
+  include partials/_head
+  body
+    block content
+    include partials/_footer
+    script(src='/app.js?v=#{version}')
