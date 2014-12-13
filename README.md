@@ -40,7 +40,7 @@ Write this...
 
 ## Gulp tasks
 
-The gulp structure for this project may be different that what you're used to. It's built in a modular fashion to avoid one large, unmaintainable Gulpfile. For more information on this specific implementation see [this great blogpost][blogpost].
+The gulp structure for this project may be different than what you're used to. It's built in a modular fashion to avoid one large, unmaintainable Gulpfile. For more information on this specific implementation see [this great blogpost][blogpost].
 
 [blogpost]: http://viget.com/extend/gulp-browserify-starter-faq
 

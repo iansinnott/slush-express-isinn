@@ -9,5 +9,5 @@ var gulp  = require('gulp'),
  */
 
 module.exports = function() {
-  return gutil.log('Example Gulp Task: See gulp/tasks/example.js');
+  return gutil.log(gutil.colors.green('Example Gulp Task: See gulp/tasks/example.js'));
 };
