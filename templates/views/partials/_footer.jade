@@ -1,3 +1,4 @@
 footer#footer
   .container
-    small.copy &copy; 2014 Example.com
+    - var year = (new Date).getFullYear()
+    small.copy &copy; #{year} Example.com
