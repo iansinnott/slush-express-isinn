@@ -1,3 +1,5 @@
+'use strict';
+
 var express    = require('express');
 var morgan     = require('morgan');
 var bodyParser = require('body-parser');
@@ -28,10 +30,23 @@ app.use(bodyParser.json());
 // View Helpers
 app.use(function(req, res, next) {
   res.locals.version = config.version;
+  res.locals.versionSha = config.versionSha;
   next();
 });
 
 // Set routes
 app.use('/', router);
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found.');
+  err.status = 404;
+  next(err);
+});
+
+app.use(function(err, req, res, next) {
+  var error = (process.env.NODE_ENV === 'development') ? err : {};
+  res.status(err.status || 500);
+  res.render('404', error);
+});
 
 module.exports = app;
