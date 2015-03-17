@@ -7,5 +7,5 @@
 
 var gulp = require('./gulp');
 
-gulp.task('build', ['browserify', 'styl']);
+gulp.task('build', ['browserify', 'stylus']);
 gulp.task('default', ['build', 'nodemon', 'watch']);

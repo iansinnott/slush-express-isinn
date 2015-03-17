@@ -48,7 +48,7 @@ var questions = [
     type:'input',
     name: 'main',
     message: 'Entrypoint:',
-    'default': 'index.js'
+    'default': 'app.js'
   },{
     type:'input',
     name: 'author',
