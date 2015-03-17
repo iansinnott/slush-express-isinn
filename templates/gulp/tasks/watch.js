@@ -13,5 +13,5 @@ module.exports = function() {
 
   gulp.watch(config.paths.js, ['browserify'], lr.changed);
   gulp.watch(config.paths.styl, ['stylus']);
-  gulp.watch(config.paths.dest + '**/*.css', lr.changed);
+  gulp.watch(config.paths.dest + '*.css', lr.changed);
 };
