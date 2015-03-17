@@ -1,6 +1,6 @@
 {
   "name": "slush-express-isinn",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A slush generator for express apps",
   "main": "slushfile.js",
   "scripts": {
