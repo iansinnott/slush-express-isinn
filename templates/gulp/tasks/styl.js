@@ -22,7 +22,7 @@ module.exports = function() {
 
   // We're using concat b/c we want to make sure our stylus files under
   // client/lib get concatenated first as they have vars.
-  gulp.src([config.paths.stylMain, config.paths.styl])
+  gulp.src([config.paths.stylMain.concat(config.paths.styl)])
     .pipe(plumber())
     .pipe(concat('temp.styl'))
     .pipe(stylus({ errors: true, use: [axis(), rupture(), typographic()] }))
