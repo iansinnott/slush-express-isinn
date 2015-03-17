@@ -8,4 +8,4 @@
 var gulp = require('./gulp');
 
 gulp.task('build', ['browserify', 'styl']);
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task('default', ['build', 'nodemon', 'watch']);
